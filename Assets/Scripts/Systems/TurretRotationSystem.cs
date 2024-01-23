@@ -1,4 +1,6 @@
 using Components;
+using Components.Authoring;
+using Components.Authoring.Execute;
 using Unity.Burst;
 using Unity.Burst.Intrinsics;
 using Unity.Collections;
@@ -19,7 +21,7 @@ namespace Systems
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
-            state.RequireForUpdate<TurretComponent>();
+            state.RequireForUpdate<TurretMovement>();
             
             _movementsHandle = state.GetComponentTypeHandle<MovementComponent>(isReadOnly: true);
             _transformsHandle = state.GetComponentTypeHandle<LocalTransform>(isReadOnly: false);

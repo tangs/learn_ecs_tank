@@ -1,6 +1,6 @@
 using Unity.Entities;
 
-namespace Components
+namespace Components.Authoring
 {
     public struct Tank : IComponentData
     {

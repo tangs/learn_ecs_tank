@@ -1,4 +1,4 @@
-using Components;
+using Components.Authoring;
 using Unity.Entities;
 using UnityEngine;
 
