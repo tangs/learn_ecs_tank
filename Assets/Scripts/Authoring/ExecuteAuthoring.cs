@@ -8,6 +8,7 @@ namespace Authoring
     {
         public bool turretMovement;
         public bool tankMovement;
+        public bool turretShooting;
         private class Baker : Baker<ExecuteAuthoring>
         {
             public override void Bake(ExecuteAuthoring authoring)
@@ -15,6 +16,7 @@ namespace Authoring
                 var entity = GetEntity(authoring, TransformUsageFlags.None);
                 if (authoring.turretMovement) AddComponent<TurretMovement>(entity);
                 if (authoring.tankMovement) AddComponent<TankMovement>(entity);
+                if (authoring.turretShooting) AddComponent<TurretShooting>(entity);
             }
         }
     }

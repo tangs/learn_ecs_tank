@@ -1,4 +1,3 @@
-using Components;
 using Components.Authoring;
 using Components.Authoring.Execute;
 using Unity.Burst;
@@ -26,7 +25,7 @@ namespace Systems
                 var pos = transform.ValueRO.Position;
                 pos.y = entity.Index;
 
-                var angle = (0.5f + noise.cnoise(pos / 10f)) * 2.0f * math.PI;
+                var angle = (0.5f + noise.cnoise(pos / 10f)) * 4.0f * math.PI;
                 var dir = float3.zero;
                 math.sincos(angle, out dir.x, out dir.z);
 

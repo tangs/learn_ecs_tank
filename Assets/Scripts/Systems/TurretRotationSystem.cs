@@ -27,7 +27,7 @@ namespace Systems
             _transformsHandle = state.GetComponentTypeHandle<LocalTransform>(isReadOnly: false);
             
             _turretQuery = SystemAPI.QueryBuilder()
-                .WithAll<TurretComponent, LocalTransform>().Build();
+                .WithAll<Turret, LocalTransform>().Build();
             _job = new JobChunk();
         }
 
