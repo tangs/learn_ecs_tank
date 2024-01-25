@@ -13,4 +13,8 @@ namespace Components.Authoring.Execute
     public struct TurretShooting : IComponentData
     {
     }
+
+    public struct CannonBallMovement : IComponentData
+    {
+    }
 }
