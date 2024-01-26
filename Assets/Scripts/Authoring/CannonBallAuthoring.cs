@@ -14,6 +14,7 @@ namespace Authoring
                 var entity = GetEntity(authoring, TransformUsageFlags.Dynamic);
                 AddComponent<CannonBall>(entity);
                 AddComponent<URPMaterialPropertyBaseColor>(entity);
+                AddComponent<RemoveSelf>(entity);
             }
         }
     }

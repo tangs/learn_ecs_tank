@@ -10,6 +10,7 @@ using Unity.Transforms;
 namespace Systems
 {
     [BurstCompile]
+    [UpdateAfter(typeof(TankMovementSystem))]
     public partial struct TurretRotationSystem : ISystem
     {
         private ComponentTypeHandle<MovementComponent> _movementsHandle;

@@ -7,6 +7,6 @@ namespace Aspects
     // public readonly partial struct TurretRotationAspect : IAspect
     // {
     //     public readonly RefRO<Turret> TurretAuthoring;
-    //     public readonly RefRW<LocalTransform> Transform;
+    //     public readonly RefRW<LocalTransform> TransformHandle;
     // }
 }

@@ -7,6 +7,7 @@ using Unity.Transforms;
 
 namespace Systems
 {
+    [BurstCompile]
     public partial struct TankMovementSystem : ISystem
     {
         [BurstCompile]

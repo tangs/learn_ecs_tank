@@ -288,6 +288,7 @@ MonoBehaviour:
   turretMovement: 1
   tankMovement: 1
   turretShooting: 1
+  cannonBallMovement: 1
 --- !u!4 &761726185
 Transform:
   m_ObjectHideFlags: 0
