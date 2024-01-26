@@ -1,6 +1,9 @@
+using Components;
+using Components.Authoring;
 using Components.Authoring.Execute;
 using Unity.Entities;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Authoring
 {
@@ -10,6 +13,7 @@ namespace Authoring
         public bool tankMovement;
         public bool turretShooting;
         public bool cannonBallMovement;
+        public bool tankSpawn;
         private class Baker : Baker<ExecuteAuthoring>
         {
             public override void Bake(ExecuteAuthoring authoring)
@@ -19,6 +23,7 @@ namespace Authoring
                 if (authoring.tankMovement) AddComponent<TankMovement>(entity);
                 if (authoring.turretShooting) AddComponent<TurretShooting>(entity);
                 if (authoring.cannonBallMovement) AddComponent<CannonBallMovement>(entity);
+                if (authoring.tankSpawn) AddComponent<TankSpawn>(entity);
             }
         }
     }
