@@ -158,6 +158,7 @@ MonoBehaviour:
   cannonBallMovement: 1
   tankSpawn: 1
   safeZone: 1
+  cameraFollow: 1
 --- !u!4 &761726185
 Transform:
   m_ObjectHideFlags: 0

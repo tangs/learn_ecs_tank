@@ -10,12 +10,14 @@ namespace Systems
 {
     public partial struct SafeZoneSystem : ISystem
     {
+        [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
             state.RequireForUpdate<SafeZone>();
             state.RequireForUpdate<TankConfig>();
         }
 
+        [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
             var radius = SystemAPI.GetSingleton<TankConfig>().SafeZoneRadius;
