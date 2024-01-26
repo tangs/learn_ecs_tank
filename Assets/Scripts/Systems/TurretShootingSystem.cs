@@ -1,4 +1,5 @@
 using Aspects;
+using Components;
 using Components.Authoring;
 using Components.Authoring.Execute;
 using Unity.Burst;
@@ -13,8 +14,6 @@ namespace Systems
     [UpdateInGroup(typeof(LateSimulationSystemGroup))]
     public partial struct TurretShootingSystem : ISystem
     {
-        private int _frame;
-        
         [BurstCompile]
         public void OnCreate(ref SystemState state)
         {
@@ -24,9 +23,9 @@ namespace Systems
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            if (_frame++ % 4 != 0) return;
             foreach (var (turret, localToWorld) in
-                     SystemAPI.Query<TurretAspect, RefRO<LocalToWorld>>())
+                     SystemAPI.Query<TurretAspect, RefRO<LocalToWorld>>()
+                         .WithAll<Shooting>())
             {
                 var pos = SystemAPI.GetComponent<LocalToWorld>(turret.CannonBallSpawn).Position;
                 var instance = state.EntityManager.Instantiate(turret.CannonBallPrefab);
@@ -40,14 +39,11 @@ namespace Systems
                 {
                     Velocity = localToWorld.ValueRO.Up * 20.0f,
                 });
-                // Debug.Log($"pos: {pos}, velocity: {localToWorld.ValueRO.Up * 20.0f}");
                 state.EntityManager.SetComponentData(instance, new URPMaterialPropertyBaseColor
                 {
                     Value = turret.Color,
                 });
             }
-
-            // state.Enabled = false;
         }
     }
 }

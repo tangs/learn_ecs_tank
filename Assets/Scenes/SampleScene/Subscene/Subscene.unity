@@ -156,7 +156,8 @@ MonoBehaviour:
   tankMovement: 1
   turretShooting: 1
   cannonBallMovement: 1
-  tankConfig: 1
+  tankSpawn: 1
+  safeZone: 1
 --- !u!4 &761726185
 Transform:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ MonoBehaviour:
   tankPrefab: {fileID: 3942395257896346399, guid: c9cd810dedd9c432aaee57554fde5df2,
     type: 3}
   tankCount: 10
-  safeZoneRadius: 200
+  safeZoneRadius: 5
 --- !u!4 &1870101682
 Transform:
   m_ObjectHideFlags: 0

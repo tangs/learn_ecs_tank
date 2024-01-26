@@ -14,6 +14,7 @@ namespace Authoring
         public bool turretShooting;
         public bool cannonBallMovement;
         public bool tankSpawn;
+        public bool safeZone;
         private class Baker : Baker<ExecuteAuthoring>
         {
             public override void Bake(ExecuteAuthoring authoring)
@@ -24,6 +25,7 @@ namespace Authoring
                 if (authoring.turretShooting) AddComponent<TurretShooting>(entity);
                 if (authoring.cannonBallMovement) AddComponent<CannonBallMovement>(entity);
                 if (authoring.tankSpawn) AddComponent<TankSpawn>(entity);
+                if (authoring.safeZone) AddComponent<SafeZone>(entity);
             }
         }
     }

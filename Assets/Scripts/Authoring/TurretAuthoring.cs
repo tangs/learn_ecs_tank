@@ -27,6 +27,8 @@ namespace Authoring
                 {
                     RadiusPerSecond = math.radians(authoring.degreesPerSecond),
                 });
+                AddComponent<Shooting>(entity);
+                SetComponentEnabled<Shooting>(entity, false);
             }
         }
     }
